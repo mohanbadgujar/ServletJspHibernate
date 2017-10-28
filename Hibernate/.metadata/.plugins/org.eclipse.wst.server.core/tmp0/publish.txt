@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Oct 28 18:21:08 IST 2017
+org.eclipse.jst.j2ee.server\:HibernateWebApp=/home/bridgeit/Desktop/MOHAN/setup/sts-bundle/pivotal-tc-server-developer-3.2.6.RELEASE/base-instance/wtpwebapps/HibernateWebApp
+org.eclipse.jst.j2ee.server\:TODO=/home/bridgeit/Desktop/MOHAN/setup/sts-bundle/pivotal-tc-server-developer-3.2.6.RELEASE/base-instance/wtpwebapps/TODO
