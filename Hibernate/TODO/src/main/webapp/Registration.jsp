@@ -32,54 +32,57 @@
 					<br>
 
 					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-user" style="width: 18px;"></i></span>
-						<input class="form-control" onkeyup="ValidateRegistration()"
-							type="text" name="name" id="name" placeholder="Full Name">
+						<span class="input-group-addon"><i class="fa fa-user"
+							style="width: 18px;"></i></span> <input class="form-control"
+							onkeyup="ValidateRegistration()" type="text" name="name"
+							id="name" placeholder="Full Name">
 
 					</div>
-						<p id="userNameError"></p>
-					
+					<p id="userNameError"></p>
+
 					<br>
 
 					<div class="input-group margin-bottom-sm">
 						<span class="input-group-addon"><i
-							class="fa fa-envelope-o fa-fw"></i></span>
-						 <input class="form-control" type="text" id="Email" name="email" placeholder="Email address"
+							class="fa fa-envelope-o fa-fw"></i></span> <input class="form-control"
+							type="text" id="Email" name="email" placeholder="Email address"
 							onkeyup="ValidateRegistration()">
-						
+
 					</div>
-						<p id="userEmailError"></p>
+					<p id="userEmailError"></p>
 
 					<br>
 
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-						<input class="form-control" type="password" id="Pass" name="password"
-							placeholder="Password" onkeyup="ValidateRegistration()">
-						
+						<input class="form-control" type="password" id="Pass"
+							name="password" placeholder="Password"
+							onkeyup="ValidateRegistration()">
+
 					</div>
-						<p id="userPassError"></p>
-						
+					<p id="userPassError"></p>
+
 					<br>
 
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-						<input class="form-control" type="password" id="RePass" name="repassword"
-							placeholder="Re-Enter Password" onkeyup="ValidateRegistration()">
-						
+						<input class="form-control" type="password" id="RePass"
+							name="repassword" placeholder="Re-Enter Password"
+							onkeyup="ValidateRegistration()">
+
 					</div>
-						<p id="userRepassError"></p>
+					<p id="userRepassError"></p>
 
 					<br>
 
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-mobile"
-							style=" font-size: 1.4em; width: 18px;"></i></span> <input class="form-control"
-							type="number" name="mobile" id="mobile"
+							style="font-size: 1.4em; width: 18px;"></i></span> <input
+							class="form-control" type="number" name="mobile" id="mobile"
 							placeholder="Mobile Number" onkeyup="ValidateRegistration()">
-						
+
 					</div>
-						<p id="userMobileError"></p>
+					<p id="userMobileError"></p>
 
 
 					<br> <label>Date of Birth:</label>
@@ -110,7 +113,7 @@
 						<input type="reset" class="btn btn-danger" name="SignIn"
 							value="Reset">
 					</div>
-				
+
 
 					<div class="form-group">
 						<center>
