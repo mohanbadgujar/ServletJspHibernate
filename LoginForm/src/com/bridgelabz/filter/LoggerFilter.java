@@ -22,7 +22,7 @@ public class LoggerFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
-		System.out.println("In logger filter after doFilter");
+		System.out.println("Login Filter Called");
 
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;

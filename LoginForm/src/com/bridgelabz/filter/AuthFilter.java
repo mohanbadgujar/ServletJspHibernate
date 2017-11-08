@@ -23,10 +23,6 @@ public class AuthFilter implements Filter {
  
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-	/*	System.out.println("In AuthFilter before doFilter");
-		chain.doFilter(request, response);
-		System.out.println("In AuthFilter after doFilter");*/
-		
 		
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
@@ -35,7 +31,7 @@ public class AuthFilter implements Filter {
 		// does not have a session, creates one.
 		HttpSession session = req.getSession();
 		
-		System.out.println("In Auth after doFilter");
+		System.out.println("Welcome Filter Called");
 
 		// Check session is null then goto login page
 		if (session != null) {

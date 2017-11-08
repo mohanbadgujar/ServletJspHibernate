@@ -1,27 +1,20 @@
 package com.bridgelabz.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import javax.servlet.ServletContext;
 import com.bridgelabz.model.User;
 
 public class ValidateDao {
 	
-	public static boolean authenticateUser(User user) {
+	public static boolean authenticateUser(User user,ServletContext ctx ) {
 
 		boolean st = false;
 		try {
 
-			System.out.println("email::"+user.getEmail()+" pass::"+user.getPassword());
-			
-			//step1 : load drivers for MySql 
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			//step2 : create  the connection object  
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/To_Do", "root",
-					"bridgeit");
+			//Retrieving connection object from ServletContext object  
+			Connection con = (Connection) ctx.getAttribute("connection");
 
 			//step3 : create the statement object  
 			Statement stmt = con.createStatement();
@@ -47,4 +40,6 @@ public class ValidateDao {
 		}
 		return st;
 	}
+
+	
 }

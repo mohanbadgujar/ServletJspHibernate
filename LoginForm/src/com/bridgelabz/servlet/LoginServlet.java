@@ -3,6 +3,7 @@ package com.bridgelabz.servlet;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +27,11 @@ public class LoginServlet extends HttpServlet {
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
 
+		//Retrieving connection object from ServletContext object
+		ServletContext ctx = getServletContext();
+		
 		// Check user is valid then go to welcome page
-		if (ValidateDao.authenticateUser(user)) {
+		if (ValidateDao.authenticateUser(user,ctx)) {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("name", user.getEmail());
