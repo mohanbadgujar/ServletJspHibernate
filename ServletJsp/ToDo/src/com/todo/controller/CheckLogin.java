@@ -39,7 +39,5 @@ public class CheckLogin extends HttpServlet {
         	System.out.println("Please login first..!");  
             request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
         } 
-
 	}
-
 }

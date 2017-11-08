@@ -105,7 +105,7 @@ function ValidateRegistration() {
 	var RePass = document.getElementById("RePass").value;
 	var mobile = document.getElementById("mobile").value;
 
-	console.log("name= " + name);
+	/*console.log("name= " + name);
 	console.log("email= " + Email);
 	console.log("pass==" + Pass);
 	console.log("repass==" + RePass);

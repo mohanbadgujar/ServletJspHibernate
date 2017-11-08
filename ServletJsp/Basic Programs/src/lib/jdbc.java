@@ -18,7 +18,6 @@ public class jdbc {
 			switch (choice) {
 			case 1:
 				insert();
-				// create a sql date object so we can use it in our INSERT statement
 				System.out.println("Data inserted Successfully");
 				break;
 			case 2:
@@ -40,30 +39,36 @@ public class jdbc {
 			}
 		}
 	}
-	
 
 	static void insert() {
 
 		try {
-			// create a mysql database connection
+
 			String myDriver = "com.mysql.jdbc.Driver";
 			String myUrl = "jdbc:mysql://localhost:3306/mohan";
+
+			// Register the driver class
 			Class.forName(myDriver);
+
+			// Create the connection object
 			Connection conn = DriverManager.getConnection(myUrl, "root", "bridgeit");
 
-			// the mysql insert statement
+			// MySql insert query
 			String query = " insert into emp (id,name,age)" + " values (?, ?, ?)";
 
-			// create the mysql insert preparedstatement
+			// Create the Statement object
 			PreparedStatement preparedStmt = conn.prepareStatement(query);
+
 			preparedStmt.setInt(1, 10);
-			preparedStmt.setString(2, "Rubble");
+			preparedStmt.setString(2, "mohan");
 			preparedStmt.setInt(3, 20);
 
-			// execute the preparedstatement
+			// Execute the query
 			preparedStmt.execute();
 
+			// Close the connection object
 			conn.close();
+
 		} catch (Exception e) {
 			System.err.println("Got an exception!");
 			System.err.println(e.getMessage());
@@ -73,13 +78,17 @@ public class jdbc {
 	static void delete() {
 
 		try {
-			// create a mysql database connection
+
 			String myDriver = "com.mysql.jdbc.Driver";
 			String myUrl = "jdbc:mysql://localhost:3306/mohan";
+
+			// Register the driver class
 			Class.forName(myDriver);
+
+			// create a database connection
 			Connection conn = DriverManager.getConnection(myUrl, "root", "bridgeit");
 
-			// // create a sql date object so we can use it in our INSERT statement
+			// create a Sql date object so we can use it in our INSERT statement
 			// Calendar calendar = Calendar.getInstance();
 			// java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
@@ -87,24 +96,28 @@ public class jdbc {
 			PreparedStatement preparedStmt = conn.prepareStatement(query);
 			preparedStmt.setInt(1, 10);
 
-			// execute the preparedstatement
+			// execute the PreparedStatement
 			preparedStmt.execute();
 
 			conn.close();
+
 		} catch (Exception e) {
 			System.err.println("Got an exception!");
 			System.err.println(e.getMessage());
 		}
 	}
 
-	
 	static void update() {
 
 		try {
-			// create a mysql database connection
+
 			String myDriver = "com.mysql.jdbc.Driver";
 			String myUrl = "jdbc:mysql://localhost:3306/mohan";
+
+			// Register the driver class
 			Class.forName(myDriver);
+
+			// Creating connection
 			Connection conn = DriverManager.getConnection(myUrl, "root", "bridgeit");
 
 			// create the java mysql update preparedstatement
@@ -117,13 +130,13 @@ public class jdbc {
 			preparedStmt.execute();
 
 			conn.close();
+			
 		} catch (Exception e) {
 			System.err.println("Got an exception!");
 			System.err.println(e.getMessage());
 		}
 	}
-	
-	
+
 	static void display() {
 		try {
 
@@ -138,6 +151,7 @@ public class jdbc {
 
 			// Execute the query
 			ResultSet rs = stmt.executeQuery("select * from emp");
+
 			while (rs.next()) {
 				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
 			}
@@ -148,5 +162,5 @@ public class jdbc {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}	
+	}
 }

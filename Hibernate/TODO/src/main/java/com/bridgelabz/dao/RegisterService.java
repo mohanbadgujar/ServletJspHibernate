@@ -11,8 +11,6 @@ public class RegisterService {
 
 	public boolean register(User user) {
 
-		System.out.println("hellossdf");
-
 		Session session = HibernateUtil.openSession();
 
 		if (isUserExits(user))

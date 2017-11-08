@@ -11,7 +11,6 @@ public class LoginService {
 
 	public boolean authenticateUser(String email, String password) {
 
-		System.out.println("passwoeddfads" + password);
 		User user = getUserByEmailId(email);
 
 		if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {

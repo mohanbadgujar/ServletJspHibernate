@@ -1,0 +1,70 @@
+/* body{
+	background-image: url(bg.jpg);
+} */
+
+#form{
+	float: none;
+	background-color: white;
+	top: 15px;
+	min-height: 400px;
+	margin: 0 auto;
+	box-shadow: 0 0 30px black;
+}
+
+.registration{
+	
+	font-size: 35px;
+	font-family: Agency FB;
+	font-weight: 600;
+}
+
+.form-group input
+{
+	width: 100%;
+	margin-bottom: 20px;
+} 
+
+.form-group
+{
+	position: relative;
+}
+
+.form-group span	
+{
+	position: absolute;
+	top: 8px;
+	padding-right: 300px;
+	padding-left: 10px;
+	color: #262626;
+} 
+
+.form-group input[type="date"]
+{
+	top: 6px;
+	padding-left: 30px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"]
+{
+	font-size: 15px;
+   	height: 35px;
+   	padding-left: 30px;
+}
+
+.form-group input[type = "reset"],
+.form-group input[type = "submit"]
+{
+	outline: none;
+	border: none;
+	height: 35px;
+	width: 49%;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+#name{
+	
+	width: 300;
+}
+

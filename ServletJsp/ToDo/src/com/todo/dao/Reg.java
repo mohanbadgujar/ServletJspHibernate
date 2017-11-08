@@ -29,6 +29,9 @@ public class Reg extends HttpServlet {
 		userModel.setMobile(request.getParameter("mobile"));
 		userModel.setBirth(request.getParameter("dob"));
 		userModel.setSex(request.getParameter("sex"));
+		//UserDao dao = new UserDao();
+		//dao.saveUser(User);
+		//
 
 		String name = userModel.getName();
 		String Email = userModel.getEmail();

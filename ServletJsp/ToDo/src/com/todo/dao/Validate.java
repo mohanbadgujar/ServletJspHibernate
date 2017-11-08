@@ -8,6 +8,7 @@ import java.sql.Statement;
 import com.todo.model.UserModel;
 
 public class Validate {
+	
 	public static boolean checkUser(UserModel usermodel) {
 
 		boolean st = false;
