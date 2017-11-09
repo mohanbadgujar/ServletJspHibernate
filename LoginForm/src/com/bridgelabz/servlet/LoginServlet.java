@@ -35,9 +35,10 @@ public class LoginServlet extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("name", user.getEmail());
+	
 			response.sendRedirect("welcome");
 			
-		} else// Go to Login Page
+		} else
 		{
 			System.out.println("Sorry, username or password error!");
 			request.setAttribute("error", "Invalid Username or Password");

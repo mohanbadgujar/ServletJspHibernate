@@ -1,4 +1,4 @@
-package com.bridgelabz.servlet;
+package com.bridgelabz.validation;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

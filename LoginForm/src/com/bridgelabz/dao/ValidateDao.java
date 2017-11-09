@@ -8,7 +8,7 @@ import com.bridgelabz.model.User;
 
 public class ValidateDao {
 	
-	public static boolean authenticateUser(User user,ServletContext ctx ) {
+	public static boolean authenticateUser(User user,ServletContext ctx) {
 
 		boolean st = false;
 		try {

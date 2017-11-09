@@ -16,12 +16,9 @@ public class LoggerFilter implements Filter {
 
 	FilterConfig filterConfig = null;
 
-	public void destroy() {
-	}
-
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		
+
 		System.out.println("Login Filter Called");
 
 		HttpServletRequest req = (HttpServletRequest) request;
@@ -31,27 +28,19 @@ public class LoggerFilter implements Filter {
 		// does not have a session, creates one.
 		HttpSession session = req.getSession();
 
-		// Check session is null then goto login page
-		/*if (session != null) {*/
+		String name = (String) session.getAttribute("name");
 
-			String name = (String) session.getAttribute("name");
+		// check user exists then goto welcome page
+		if (name != null) {
 
-			// check user exists then goto welcome page
-			if (name != null) {
+			// go to welcome page
+			res.sendRedirect("welcome");
 
-				System.out.println("Welcome " + name);
-				res.sendRedirect("welcome");
+		} else {
 
-			} else {
-
-				System.out.println("Please login first");
-				chain.doFilter(request, response);
-			}
-		/*} else {
-
-			System.out.println("Please login first..!");
-			res.sendRedirect("login");
-		}*/
+			// go to login page
+			chain.doFilter(request, response);
+		}
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

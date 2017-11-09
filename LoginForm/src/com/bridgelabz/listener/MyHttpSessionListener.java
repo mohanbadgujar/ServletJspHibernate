@@ -7,13 +7,21 @@ import javax.servlet.http.HttpSessionListener;
 
 @WebListener
 public class MyHttpSessionListener implements HttpSessionListener {
-
-    public void contextInitialized(HttpSessionEvent sce)  { 
-         System.out.println("Http session is created");
+	
+	private static int totalSessions = 0;
+	
+    public void sessionCreated(HttpSessionEvent se)  { 
+    	
+    	 totalSessions++;
+    	 System.out.println("Http session is created::ID="+se.getSession().getId());
+    	 System.out.println("Total Sessins"+totalSessions);
+   
     }
 	
-    public void contextDestroyed(HttpSessionEvent sce)  { 
-        System.out.println("session is destroyed");
-   }
+    public void sessionDestroyed(HttpSessionEvent se)  { 
+    
+        System.out.println("session is destroyed::ID="+se.getSession().getId());
+        System.out.println("Total Sessins"+totalSessions);
+    }
 
 }

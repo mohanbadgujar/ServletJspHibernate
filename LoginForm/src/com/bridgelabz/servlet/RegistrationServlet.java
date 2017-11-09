@@ -2,6 +2,7 @@ package com.bridgelabz.servlet;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,13 +36,16 @@ public class RegistrationServlet extends HttpServlet {
 
 		// Check user backEnd validation
 		String isError = validation.checkValidation(user);
+		
+		//Get connection object from servlet context listener
+		ServletContext servletContext = getServletContext();
 
 		// Save user data if no backEnd validation error
 		if (isError == null) {
 
 			// Save user to database
 			SaveUserDao saveUser = new SaveUserDao();
-			Boolean isUserSaved = saveUser.saveUser(user);
+			Boolean isUserSaved = saveUser.saveUser(user,servletContext);
 
 			if (isUserSaved) {
 				

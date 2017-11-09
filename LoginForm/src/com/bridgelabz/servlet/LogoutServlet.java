@@ -1,8 +1,6 @@
 package com.bridgelabz.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +18,8 @@ public class LogoutServlet extends HttpServlet {
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+		/*response.setContentType("text/html");
+		PrintWriter out = response.getWriter();*/
 
 		HttpSession session = request.getSession(false);
 		session.removeAttribute("name");

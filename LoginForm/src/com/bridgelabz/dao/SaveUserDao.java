@@ -1,24 +1,22 @@
 package com.bridgelabz.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import javax.servlet.ServletContext;
 
 import com.bridgelabz.model.User;
 
 public class SaveUserDao {
 
-	public Boolean saveUser(User user) {
+	public Boolean saveUser(User user,ServletContext servletContext) {
 		
 		Boolean isuserSaved = false;
 		int i = 0;
 		
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/To_Do",
-					"root", "bridgeit");
-
+			Connection con = (Connection) servletContext.getAttribute("connection");
+			
 			PreparedStatement stmt = con.prepareStatement(
 					"insert into User_Details(name, email, password, mobile, birth, sex) values(?,?,?,?,?,?)");
 			stmt.setString(1, user.getName());// 1 specifies the first parameter in the query
