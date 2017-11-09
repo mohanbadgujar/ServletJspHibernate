@@ -24,7 +24,7 @@ public class UserBackEndValidation {
 		if (user.getName().matches(NameRegx)) {
 
 			if (user.getEmail().matches(EmailRegx)) {
-
+				
 				if (user.getPassword().matches(PassRegx)) {
 
 					if (user.getRepassword().equals(user.getRepassword())) {

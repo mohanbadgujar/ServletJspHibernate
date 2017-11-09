@@ -14,8 +14,12 @@ public class SaveUserDao {
 		int i = 0;
 		
 		try {
+			
+			//Get connection using data pooling
+			Connection con = DataSourcesPools.getConnection();
 
-			Connection con = (Connection) servletContext.getAttribute("connection");
+			/*//use this object when use through servlet context listener
+			Connection con = (Connection) servletContext.getAttribute("connection");*/
 			
 			PreparedStatement stmt = con.prepareStatement(
 					"insert into User_Details(name, email, password, mobile, birth, sex) values(?,?,?,?,?,?)");

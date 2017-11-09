@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.bridgelabz.dao.DataSourcesPools;
+
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
 
@@ -24,7 +26,10 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		session.removeAttribute("name");
 		session.invalidate();
-
+		
+		//close connection object
+		DataSourcesPools.closeConnection();
+		
 		response.sendRedirect("login");
 		
 	}

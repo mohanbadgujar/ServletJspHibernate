@@ -13,8 +13,10 @@ public class ValidateDao {
 		boolean st = false;
 		try {
 
-			//Retrieving connection object from ServletContext object  
-			Connection con = (Connection) ctx.getAttribute("connection");
+		   Connection con = DataSourcesPools.getConnection();
+			
+		/*	//Retrieving connection object from ServletContext object  
+			Connection con = (Connection) ctx.getAttribute("connection");*/
 
 			//step3 : create the statement object  
 			Statement stmt = con.createStatement();
