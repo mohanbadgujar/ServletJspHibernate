@@ -19,6 +19,7 @@ public class RegistrationPage extends HttpServlet {
 
 		// sent to the registration page
 		response.sendRedirect("registration");
+		return;
 
 	}
 

@@ -1,0 +1,35 @@
+
+how to force to stop in ubntu
+manully
+1)alt+f2
+2)“gnome-system-monitor” without doublecoot
+3)select process and right click and kill
+
+
+html css demo site
+http://www.cssflow.com/snippets/login-form/demo
+
+Login and Registration Example in JSP with Session
+http://www.javaknowledge.info/login-and-registration-example-in-jsp-with-session/
+
+Login forms html css javascript
+https://colorlib.com/wp/html5-and-css3-login-forms/
+
+Ajax
+The best definition I’ve read for Ajax is “the method of exchanging data with a server, and updating parts of a web page – without reloading the entire page.”
+
+
+jquery validation plugin using regx
+http://www.jqueryscript.net/form/Form-Validation-Plugin-Bootstrap-4-vindicate.html
+  
+shortcuts-
+shift+alt+j ---create java doc(documentation)
+shift+alt+f ---well format structure
+
+command to stop process
+1)fuser -n tcp 8080
+2)kill -9 10021
+
+
+
+

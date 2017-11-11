@@ -46,12 +46,12 @@
     <url-pattern>/registerpage</url-pattern>
   </servlet-mapping>
   <filter>
-    <display-name>authFilter</display-name>
-    <filter-name>authFilter</filter-name>
-    <filter-class>com.bridgelabz.filter.AuthFilter</filter-class>
+    <display-name>LoggerFilter</display-name>
+    <filter-name>LoggerFilter</filter-name>
+    <filter-class>com.bridgelabz.filter.LoggerFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>authFilter</filter-name>
+    <filter-name>LoggerFilter</filter-name>
     <url-pattern>/welcome</url-pattern>
   </filter-mapping>
   <servlet>

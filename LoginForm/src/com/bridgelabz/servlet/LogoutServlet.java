@@ -31,6 +31,6 @@ public class LogoutServlet extends HttpServlet {
 		DataSourcesPools.closeConnection();
 		
 		response.sendRedirect("login");
-		
+		return;
 	}
 }

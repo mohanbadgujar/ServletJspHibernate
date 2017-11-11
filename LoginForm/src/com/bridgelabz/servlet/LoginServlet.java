@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("name", user.getEmail());
 	
 			response.sendRedirect("welcome");
-			
+			return;
 		} else
 		{
 			System.out.println("Sorry, username or password error!");
@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("login");
 			rd.forward(request, response);
+			return;
 		}
 	}
 }

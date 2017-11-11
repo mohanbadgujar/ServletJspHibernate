@@ -29,17 +29,38 @@ public class LoggerFilter implements Filter {
 		HttpSession session = req.getSession();
 
 		String name = (String) session.getAttribute("name");
+		
+		String url = ((HttpServletRequest) request).getRequestURI();
 
 		// check user exists then goto welcome page
-		if (name != null) {
-
-			// go to welcome page
-			res.sendRedirect("welcome");
-
-		} else {
-
+		if (name == null) {
+			
+			if(url.equals("/LoginForm/welcome")) {
+				
+				// go to login page
+				res.sendRedirect("login");
+				return;
+				
+			}
+			
 			// go to login page
 			chain.doFilter(request, response);
+			return;
+			
+		}else {
+			
+			if(url.equals("/LoginForm/")) {
+				res.sendRedirect("welcome");
+				return;
+			}
+			
+			if(url.equals("/LoginForm/welcome")) {
+				
+				// go to login page
+				chain.doFilter(request, response);
+				return;
+				
+			}
 		}
 	}
 

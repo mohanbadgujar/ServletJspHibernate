@@ -1,0 +1,18 @@
+https://way2java.com/servlets/difference-between-include-and-forward-in-requestdispatcher/
+
+
+example:https://www.javatpoint.com/requestdispatcher-in-servlet
+
+
+Read Example:-
+http://javapapers.com/jsp/difference-between-forward-and-sendredirect/
+
+When to use include forword and sendredirect
+https://stackoverflow.com/questions/33100116/when-to-use-forward-include-and-sendredirect
+
+
+
+
+forword = if we want to send data in same page then we use forword.
+sendRedirect = if we want to send data to another resource then use sendRedirect.
+include = if we want to include header in foter we use include.

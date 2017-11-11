@@ -30,7 +30,6 @@ public class DataSourcesPools {
 		}
 	}
 	
-	
 	public static Connection getConnection() throws SQLException
 	{
 		System.out.println("Inside connection");

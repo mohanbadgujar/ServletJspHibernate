@@ -50,11 +50,13 @@ public class RegistrationServlet extends HttpServlet {
 			if (isUserSaved) {
 				
 				response.sendRedirect("login");
+				return;
 
 			} else {
 
 				RequestDispatcher rd = request.getRequestDispatcher("registration");
 				rd.forward(request, response);
+				return;
 			}
 
 		} else {
@@ -63,7 +65,7 @@ public class RegistrationServlet extends HttpServlet {
 			request.setAttribute("regerror", isError);
 			RequestDispatcher rd = request.getRequestDispatcher("registration");
 			rd.forward(request, response);
-
+			return;
 		}
 
 	}

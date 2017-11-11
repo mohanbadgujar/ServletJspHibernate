@@ -31,16 +31,16 @@ public class AuthFilter implements Filter {
 		String name = (String) session.getAttribute("name");
 
 		// check user exists then goto welcome page
-		if (name != null) {
-
-			// go to welcome page
-			chain.doFilter(request, response);
-
-		} else {
+		if (name == null) {
 
 			// go to login page
 			res.sendRedirect("login");
+			return;
 		}
+		
+		// go to welcome page
+		chain.doFilter(request, response);
+		return;
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
